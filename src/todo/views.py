@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .forms import TodoForm
@@ -18,18 +18,18 @@ def index(request):
                 DataForm = form.save(commit=False)
                 DataForm.user = request.user
                 DataForm.save()
-                return redirect('todo')
+                return redirect("todo")
         form = TodoForm()
     else:
-        form=""
-        item_list=""
+        form = ""
+        item_list = ""
 
     page = {
-             "form" : form,
-             "list" : item_list,
-             "title" : "TODO LIST",
-           }
-    return render(request,'todo/index.html',page)
+        "form": form,
+        "list": item_list,
+        "title": "TODO LIST",
+    }
+    return render(request, "todo/index.html", page)
 
 
 ### function to remove item , it recive todo item id from url ##
@@ -37,5 +37,5 @@ def index(request):
 def remove(request, item_id):
     item = Todo.objects.get(id=item_id)
     item.delete()
-    messages.info(request,"item removed !!!")
-    return redirect('todo')
+    messages.info(request, "item removed !!!")
+    return redirect("todo")

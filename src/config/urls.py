@@ -33,15 +33,16 @@ admin.empty_value_display = "**Empty**"
 
 urlpatterns = [
     #####################home_page###########################################
-    path('',views.index,name="todo"),
+    path("", views.index, name="todo"),
     ####################give id no. item_id name or item_id=i.id ############
-    path('del/<int:item_id>',views.remove,name="del"),
-
-    path('admin/', admin.site.urls),
-
+    path("del/<int:item_id>", views.remove, name="del"),
+    path("admin/", admin.site.urls),
     #####user related path##########################
-    path('login/',user_view.Login,name='login'),
-    path('logout/',auth.LogoutView.as_view(template_name='todo/index.html'),name='logout'),
-    path('register/',user_view.register,name='register'),
-
-]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path("login/", user_view.Login, name="login"),
+    path(
+        "logout/",
+        auth.LogoutView.as_view(template_name="todo/index.html"),
+        name="logout",
+    ),
+    path("register/", user_view.register, name="register"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
