@@ -1,5 +1,5 @@
 
-<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="40000" id="bs-carousel">
     <!-- Overlay -->
     <div class="overlay"></div>
   
@@ -16,30 +16,33 @@
         <div class="slide-1"></div>
         <div class="hero">
           <hgroup>
-              <h1>We are creative</h1>        
-              <h3>Get start your next awesome project</h3>
+              <h1>Todo App</h1>        
+              <h3>Login, don't miss a thing</h3>
           </hgroup>
-          <button class="btn btn-hero btn-lg" role="button">See all features</button>
+          <a href="{% url 'login' %}">
+           <button class="btn btn-hero btn-lg" role="button">Login</button>
+          </a>
         </div>
       </div>
       <div class="item slides">
         <div class="slide-2"></div>
         <div class="hero">        
           <hgroup>
-              <h1>We are smart</h1>        
-              <h3>Get start your next awesome project</h3>
+              <h1>Be smart</h1>        
+              <h3>write everything you need</h3>
           </hgroup>       
-          <button class="btn btn-hero btn-lg" role="button">See all features</button>
+          <a href="{% url 'register' %}">
+            <button class="btn btn-hero btn-lg" role="button">Register</button>
+         </a>
         </div>
       </div>
       <div class="item slides">
         <div class="slide-3"></div>
         <div class="hero">        
           <hgroup>
-              <h1>We are amazing</h1>        
-              <h3>Get start your next awesome project</h3>
+              <h1>Be amazing</h1>        
+              <h3> don't forget anything</h3>
           </hgroup>
-          <button class="btn btn-hero btn-lg" role="button">See all features</button>
         </div>
       </div>
     </div> 

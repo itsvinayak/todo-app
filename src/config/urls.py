@@ -41,7 +41,7 @@ urlpatterns = [
 
     #####user related path##########################
     path('login/',user_view.Login,name='login'),
-    path('logout/',auth.LogoutView.as_view(template_name='user/index.html'),name='logout'),
+    path('logout/',auth.LogoutView.as_view(template_name='todo/index.html'),name='logout'),
     path('register/',user_view.register,name='register'),
 
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
